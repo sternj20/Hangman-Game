@@ -41,6 +41,7 @@ var currentWordHtml = document.getElementById('currentWord');
 var guessesLeftHtml = document.getElementById('guessesLeft');
 var guessedLettersHtml = document.getElementById('guessedLetters');
 var winsHTML = document.getElementById('wins');
+
 //array of different words that the user will try to guess
 var words = ['miles', 'coltrane', 'parker'];
 
@@ -52,7 +53,6 @@ var randomWord = randomWordGetter(words);
 
 // function to show array that is the length of the currently selected word, but with all blank spaces
 function showguessWord(){
-	guessWordStr = '';
 	guessWord = [];
 	guessesLeft = 13;
 	guessesLeftHtml.innerText=guessesLeft;
@@ -61,10 +61,8 @@ function showguessWord(){
 		// and pushes a blank space into a new array, one space for each letter
 		guessWord.push('-');
 	}
-	//turn array of blank spaces into a string, so that it shows without commas in between 
-	guessWordStr = guessWord.join('');
 	//update the dom to show variable with blank spaces
-	currentWordHtml.innerText=guessWordStr;
+	currentWordHtml.innerText=guessWord.join('');
 }
 showguessWord();
 
@@ -73,43 +71,42 @@ document.onkeyup=function(event){
 	// loop through the letters in the currently selected word
 	for (var i = 0; i < randomWord.length; i++){
 	//if the user presses the key that is a letter in the currently selected word
-	if (event.key===randomWord[i]){
-			//fill in the blank array with that letter at the correct indexes the letter appears
-			guessWord[i]=event.key;
-			guessWordStr = guessWord.join('');
-			//subtract one from guesses left
-			guessesLeft--;
-			//update dom
-			guessesLeftHtml.innerText=guessesLeft;
-		} 
-			//update dom to show the blank array with correctly guessed letter at corresponding indexes
-			currentWordHtml.innerText=guessWordStr;
-		}
-		if (randomWord.indexOf(event.key) === -1){
-			//subtract one from guesses left
-			guessesLeft--;
-			//update dom
-			guessesLeftHtml.innerText=guessesLeft;
-			//push incorrectly guessed letter to array guessedLetters
-			guessedLetters.push(event.key);
-			//update dom
-			guessedLettersHtml.innerText=guessedLetters;
-		}
-		//tracking winner or loser
-		if (guessWordStr === randomWord && guessesLeft !== 0) {
-			console.log('you win!');
-			//add one win to wins variable
-			wins++;
-			//update dom
-			winsHTML.innerText=wins;
-			//generate new random word 
-			randomWord = randomWordGetter(words);
-			//show random word as blank spaces
-			showguessWord();
-		} 
-		//reset score and pick new random word
-		if (guessesLeft === 0){
-		console.log('you lose!');
+		if (event.key===randomWord[i]){
+				//fill in the blank array with that letter at the correct indexes the letter appears
+				guessWord[i]=event.key;
+				guessWordStr = guessWord.join('');
+				//subtract one from guesses left
+				guessesLeft--;
+				//update dom
+				guessesLeftHtml.innerText=guessesLeft;
+			} 
+		//update dom to show the blank array with correctly guessed letter at corresponding indexes
+		currentWordHtml.innerText=guessWord.join('');
+	}
+	// if the letter guessed is not in the random word, and the letter guessed is not already in guessedletters 
+	if (randomWord.indexOf(event.key) === -1 && guessedLetters.indexOf(event.key) === -1){
+		//subtract one from guesses left
+		guessesLeft--;
+		//update dom
+		guessesLeftHtml.innerText=guessesLeft;
+		//push incorrectly guessed letter to array guessedLetters
+		guessedLetters.push(event.key);
+		//update dom
+		guessedLettersHtml.innerText=guessedLetters;
+	}
+	//tracking winner or loser
+	if (guessWord.join('') === randomWord && guessesLeft !== 0) {
+		//add one win to wins variable
+		wins++;
+		//update dom
+		winsHTML.innerText=wins;
+		//generate new random word 
+		randomWord = randomWordGetter(words);
+		//show random word as blank spaces
+		showguessWord();
+	} 
+	//reset score and pick new random word
+	if (guessesLeft === 0){
 		randomWord = randomWordGetter(words);
 		showguessWord();
 	}

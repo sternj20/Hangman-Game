@@ -3,24 +3,43 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="http://bootswatch.com/slate/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-	Press any key to get started!
-	<br>
-	Wins: 
-	<div id="wins">
+	<div class = "container">
+		<div class="row header">
+			<div class = "col-md-offset-1 col-md-10 col-md-offset-1">
+				<img class = "responsive imghead" src="assets/images/legends.jpg">
+				<h1>Jazz Nickname Hangman Game</h1>
+			</div>
+		</div>
+
+		<div class = "row">
+			<div class = "col-md-6">
+
+			</div>
+			<div class = "col-md-6">
+
+				Press any key to get started!
+				<br>
+				Wins: 
+				<div id="wins">
+				</div>
+				<br>
+				Current Word
+				<br>
+				<div id = "currentWord">
+				</div>
+				Number of Guesses Remaining: 
+				<div id ="guessesLeft">13</div>
+				<br>
+				Letters Already Guessed: 
+				<div id ="guessedLetters">
+				</div> 
+			</div>
+		</div>
 	</div>
-	<br>
-	Current Word
-	<br>
-	<div id = "currentWord">
-	</div>
-	Number of Guesses Remaining: 
-	<div id ="guessesLeft">13</div>
-	<br>
-	Letters Already Guessed: 
-	<div id ="guessedLetters">
-	</div> 
 
 	<script type="text/javascript" src ="assets/javascript/game.js"></script>
 </body>

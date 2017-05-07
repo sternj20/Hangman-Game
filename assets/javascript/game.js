@@ -43,7 +43,7 @@ var guessedLettersHtml = document.getElementById('guessedLetters');
 var winsHTML = document.getElementById('wins');
 
 //array of different words that the user will try to guess
-var words = ['miles', 'coltrane', 'parker'];
+var words = ['miles', 'trane', 'bird', "duke", "count", "monk", "dizzy", "satchmo", "ella"];
 
 //pick a random word from the array
 function randomWordGetter (arr){
@@ -54,6 +54,8 @@ var randomWord = randomWordGetter(words);
 // function to show array that is the length of the currently selected word, but with all blank spaces
 function showguessWord(){
 	guessWord = [];
+	guessedLetters = [];
+	guessedLettersHtml.innerText=guessedLetters;
 	guessesLeft = 13;
 	guessesLeftHtml.innerText=guessesLeft;
 	// create a for loop that iterates through the currently selected word length

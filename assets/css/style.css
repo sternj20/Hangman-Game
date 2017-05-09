@@ -53,12 +53,14 @@ h2{
 	letter-spacing:15px;
 }
 .text{
-	margin-top:30px;
-	font-size:17px;
+	border-left:2px dashed;
+	margin-top:10px;
+	font-size:16px;
 	font-family: 'Julius Sans One', sans-serif;
 }
 
 #winner{
+	margin-left:20px;
 	margin-top:30px;
 	display:none;
 	width:400px;

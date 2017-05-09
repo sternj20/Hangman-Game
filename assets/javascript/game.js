@@ -42,7 +42,9 @@ var guessesLeftHtml = document.getElementById('guessesLeft');
 var guessedLettersHtml = document.getElementById('guessedLetters');
 var winsHTML = document.getElementById('wins');
 var winHTML = document.getElementById('winner');
+var instructionsHTML = document.getElementById('instructions');
 var winTextHTML = document.getElementById('winnerText');
+var milesAudio = document.getElementById('milesAudio');
 
 //array of different words that the user will try to guess
 var words = ['miles', 'trane', 'bird', "duke", "count", "monk", "dizzy", "satchmo", "ella"];
@@ -108,6 +110,8 @@ document.onkeyup=function(event){
 			winHTML.src = "assets/images/milesmain.jpg";
 			winHTML.style.display = "block";
 			winTextHTML.innerText='Miles Davis';
+			instructionsHTML.innerText='Miles Dewey Davis III (May 26, 1926 – September 28, 1991) was an American jazz trumpeter, bandleader, and composer. He is among the most influential and acclaimed figures in the history of jazz and 20th century music.';
+			milesAudio.play();
 		} else if(randomWord ==='trane'){
 			winHTML.src = "assets/images/coltranemain.jpg";
 			winHTML.style.display = "block";

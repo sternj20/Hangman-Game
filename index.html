@@ -11,49 +11,48 @@
 	<div class = "container">
 		<div class="row head">
 			<div class ="col-md-2 tinted-image">
-				
 			</div>
 			
 			<div class = "col-md-offset-1 col-md-10 col-md-offset-1">
 				<h1>Jazz Nickname Hangman Game</h1>
 			</div>
-				<div class = "col-md-offset-1 col-md-10 col-md-offset-1">
+			<div class = "col-md-offset-1 col-md-10 col-md-offset-1">
 				<h2 id = "winnerText"></h2>
 			</div>
 		</div>
 
 		<div class = "row">
 			<div class = "col-md-offset-1 col-md-5">
-			<img class = "img-circle" id ="winner">
-			<audio class = "audio" id = "milesAudio">
-			<source src="https://archive.org/download/MilesDavis86Jazz/Miles%20Davis%20-%20So%20What.mp3" type="audio/mpeg">
-			</audio>
-			</div>
-			<div class = "col-md-6 text">
-				<div id = "instructions">
-				Hey alligators, this is a hangman game, but with a hip twist. How well do you know the names of your favorite Jazz cats? Press any key to get started to show us your chops!
+				<img class = "img-circle" id ="winner">
+				<audio class = "audio" id = "milesAudio">
+					<source src="https://archive.org/download/MilesDavis86Jazz/Miles%20Davis%20-%20So%20What.mp3" type="audio/mpeg">
+					</audio>
 				</div>
-				<br>
-				Wins: 
-				<div id="wins">
+				<div class = "col-md-6 text">
+					<div id = "instructions">
+						Hey alligators, this is a hangman game, but with a hip twist. How well do you know the names of your favorite Jazz cats? Press any key to get started to show us your chops!
+					</div>
+					<br>
+					Wins: 
+					<div id="wins">
+					</div>
+					<br>
+					Current Word:
+					<br>
+					<div id = "currentWord">
+					</div>
+					<br>
+					Number of Guesses Remaining: 
+					<div id ="guessesLeft">13</div>
+					<br>
+					Letters Already Guessed: 
+					<div id ="guessedLetters">
+					</div> 
 				</div>
-				<br>
-				Current Word:
-				<br>
-				<div id = "currentWord">
-				</div>
-				<br>
-				Number of Guesses Remaining: 
-				<div id ="guessesLeft">13</div>
-				<br>
-				Letters Already Guessed: 
-				<div id ="guessedLetters">
-				</div> 
 			</div>
 		</div>
-	</div>
 
-	<script type="text/javascript" src ="assets/javascript/game.js"></script>
-</body>
-</html>
+		<script type="text/javascript" src ="assets/javascript/game.js"></script>
+	</body>
+	</html>
 

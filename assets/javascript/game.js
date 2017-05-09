@@ -110,7 +110,7 @@ document.onkeyup=function(event){
 			winHTML.src = "assets/images/milesmain.jpg";
 			winHTML.style.display = "block";
 			winTextHTML.innerText='Miles Davis';
-			instructionsHTML.innerText='Miles Dewey Davis III (May 26, 1926 – September 28, 1991) was an American jazz trumpeter, bandleader, and composer. He is among the most influential and acclaimed figures in the history of jazz and 20th century music.';
+			instructionsHTML.innerText='Miles Dewey Davis III (May 26, 1926 – September 28, 1991) was an American jazz trumpeter, bandleader, and composer.';
 			milesAudio.play();
 		} else if(randomWord ==='trane'){
 			winHTML.src = "assets/images/coltranemain.jpg";

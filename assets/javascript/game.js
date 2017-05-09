@@ -41,6 +41,8 @@ var currentWordHtml = document.getElementById('currentWord');
 var guessesLeftHtml = document.getElementById('guessesLeft');
 var guessedLettersHtml = document.getElementById('guessedLetters');
 var winsHTML = document.getElementById('wins');
+var winHTML = document.getElementById('winner');
+var winTextHTML = document.getElementById('winnerText');
 
 //array of different words that the user will try to guess
 var words = ['miles', 'trane', 'bird', "duke", "count", "monk", "dizzy", "satchmo", "ella"];
@@ -73,7 +75,7 @@ document.onkeyup=function(event){
 	// loop through the letters in the currently selected word
 	for (var i = 0; i < randomWord.length; i++){
 	//if the user presses the key that is a letter in the currently selected word
-		if (event.key===randomWord[i]){
+	if (event.key===randomWord[i]){
 				//fill in the blank array with that letter at the correct indexes the letter appears
 				guessWord[i]=event.key;
 				guessWordStr = guessWord.join('');
@@ -83,7 +85,7 @@ document.onkeyup=function(event){
 				guessesLeftHtml.innerText=guessesLeft;
 			} 
 		//update dom to show the blank array with correctly guessed letter at corresponding indexes
-		currentWordHtml.innerText=guessWord.join('');
+		currentWordHtml.innerText= guessWord.join('');
 	}
 	// if the letter guessed is not in the random word, and the letter guessed is not already in guessedletters 
 	if (randomWord.indexOf(event.key) === -1 && guessedLetters.indexOf(event.key) === -1){
@@ -102,6 +104,43 @@ document.onkeyup=function(event){
 		wins++;
 		//update dom
 		winsHTML.innerText=wins;
+		if(randomWord==='miles'){
+			winHTML.src = "assets/images/milesmain.jpg";
+			winHTML.style.display = "block";
+			winTextHTML.innerText='Miles Davis';
+		} else if(randomWord ==='trane'){
+			winHTML.src = "assets/images/coltranemain.jpg";
+			winHTML.style.display = "block";
+			winTextHTML.innerText='John ("Trane") Coltrane';
+		}else if(randomWord ==='bird'){
+			winHTML.src = "assets/images/birdmain.jpg";
+			winHTML.style.display = "block";
+			winTextHTML.innerText= 'Charlie "Bird" Parker';
+		}else if(randomWord ==='duke'){
+			winHTML.src = "assets/images/dukemain.jpg";
+			winHTML.style.display = "block";
+			winTextHTML.innerText= 'Duke Ellington';
+		}else if(randomWord ==='count'){
+			winHTML.src = "assets/images/countmain.jpg";
+			winHTML.style.display = "block";
+			winTextHTML.innerText='Count Basie';
+		}else if(randomWord ==='monk'){
+			winHTML.src = "assets/images/monkmain.png";
+			winHTML.style.display = "block";
+			winTextHTML.innerText= 'Thelonious Monk';
+		}else if(randomWord==='dizzy'){
+			winHTML.src = "assets/images/dizzymain.jpg";
+			winHTML.style.display = "block";
+			winTextHTML.innerText='Dizzy Gillespie';
+		}else if(randomWord==='satchmo'){
+			winHTML.src = "assets/images/satchmomain.jpg";
+			winHTML.style.display = "block";
+			winTextHTML.innerText='Louis "Satchmo" Armstrong';
+		}else if(randomWord==='ella'){
+			winHTML.src = "assets/images/ellamain.jpg";
+			winHTML.style.display = "block";
+			winTextHTML.innerText='Ella Fitzgerald';
+		}
 		//generate new random word 
 		randomWord = randomWordGetter(words);
 		//show random word as blank spaces

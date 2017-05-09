@@ -1,11 +1,57 @@
-.imghead{
-	width:80%;
-	height:250px;
-	margin-left:50px;
-	background-color: black;
+@font-face {
+    font-family: Solid-Grooves;
+    src: url("solid-Grooves.otf") format("opentype");
 }
 
+body{
+	background:black;
+	color:white;
+}
+
+/*header*/
+
+.legends{
+	height:150px;
+	margin-left:50px;
+	opacity:.2;
+}
+
+.head {
+	margin-left:-100px;
+}
+
+.page-header{
+	margin-top:0px;
+}
 h1{
+	font-family:"Solid-Grooves";
+	color: #0b8bb8;
 	text-align:center;
-	margin-bottom:30px;
+	margin-bottom:0px;
+	font-size:50px;
+}
+
+h2{
+	font-family:"Solid-Grooves";
+	color: #0b8bb8;
+	text-align:center;
+	margin-top:0px;
+	margin-bottom:0px;
+	font-size:30px;
+}
+/*main*/
+#currentWord{
+	letter-spacing:15px;
+}
+.text{
+	margin-top:30px;
+	font-size:17px;
+	font-family: 'Julius Sans One', sans-serif;
+}
+
+#winner{
+	margin-top:30px;
+	display:none;
+	width:400px;
+	height:300px;
 }

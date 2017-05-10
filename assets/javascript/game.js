@@ -50,6 +50,9 @@ var milesAudio = document.getElementById('milesAudio');
 var words = ['miles', 'trane', 'bird', "duke", "count", "monk", "dizzy", "satchmo", "ella"];
 
 //pick a random word from the array
+randomWordGetter: function (arr){
+	return arr[Math.floor(Math.random()*words.length)];
+}
 function randomWordGetter (arr){
 	return arr[Math.floor(Math.random()*words.length)];
 }
@@ -73,11 +76,13 @@ function showguessWord(){
 showguessWord();
 
 //listen for key event
+var getUserKey: document.onkeyup=function(event)
 document.onkeyup=function(event){
+	return event.key;
 	// loop through the letters in the currently selected word
 	for (var i = 0; i < randomWord.length; i++){
 	//if the user presses the key that is a letter in the currently selected word
-	if (event.key===randomWord[i]){
+	if (getUserKey===randomWord[i]){
 				//fill in the blank array with that letter at the correct indexes the letter appears
 				guessWord[i]=event.key;
 				guessWordStr = guessWord.join('');
@@ -157,3 +162,6 @@ document.onkeyup=function(event){
 	}
 };
 
+var hangman = {
+
+}

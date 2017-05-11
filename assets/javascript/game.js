@@ -31,35 +31,38 @@
 //players loses, reset game to next word in array
 
 //variables
-var guessesLeft = 13;
-var guessedLetters =[];
-var wins = 0;
-var guessWord = [];
+
+
+var hangman = {
+
+
+guessesLeft: 13,
+guessedLetters: [],
+wins: 0,
+guessWord: [],
 
 //dom variables
-var currentWordHtml = document.getElementById('currentWord');
-var guessesLeftHtml = document.getElementById('guessesLeft');
-var guessedLettersHtml = document.getElementById('guessedLetters');
-var winsHTML = document.getElementById('wins');
-var winHTML = document.getElementById('winner');
-var instructionsHTML = document.getElementById('instructions');
-var winTextHTML = document.getElementById('winnerText');
-var milesAudio = document.getElementById('milesAudio');
+currentWordHtml: document.getElementById('currentWord'),
+guessesLeftHtml: document.getElementById('guessesLeft'),
+guessedLettersHtml: document.getElementById('guessedLetters'),
+winsHTML: document.getElementById('wins'),
+winHTML: document.getElementById('winner'),
+instructionsHTML: document.getElementById('instructions'),
+winTextHTML: document.getElementById('winnerText'),
+milesAudio: document.getElementById('milesAudio'),
 
 //array of different words that the user will try to guess
-var words = ['miles', 'trane', 'bird', "duke", "count", "monk", "dizzy", "satchmo", "ella"];
+words:['miles', 'trane', 'bird', "duke", "count", "monk", "dizzy", "satchmo", "ella"],
 
 //pick a random word from the array
 randomWordGetter: function (arr){
 	return arr[Math.floor(Math.random()*words.length)];
-}
-function randomWordGetter (arr){
-	return arr[Math.floor(Math.random()*words.length)];
-}
-var randomWord = randomWordGetter(words);
+},
+
+randomWord: randomWordGetter(words),
 
 // function to show array that is the length of the currently selected word, but with all blank spaces
-function showguessWord(){
+showguessWord: function (){
 	guessWord = [];
 	guessedLetters = [];
 	guessedLettersHtml.innerText=guessedLetters;
@@ -72,7 +75,7 @@ function showguessWord(){
 	}
 	//update the dom to show variable with blank spaces
 	currentWordHtml.innerText=guessWord.join('');
-}
+},
 showguessWord();
 
 //listen for key event
@@ -161,7 +164,4 @@ document.onkeyup=function(event){
 		showguessWord();
 	}
 };
-
-var hangman = {
-
 }

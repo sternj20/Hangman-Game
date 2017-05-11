@@ -157,7 +157,7 @@ document.onkeyup=function(event){
 			winHTML.src = "assets/images/monkmain.png";
 			winHTML.style.display = "block";
 			winTextHTML.innerText= 'Thelonious Monk';
-			instructionsHTML.innerText="Thelonious Sphere Monk (October 10, 1917[3] – February 17, 1982) was an American jazz pianist and composer. Monk had a unique improvisational style and made numerous contributions to the standard jazz repertoire. Monk is the second most-recorded jazz composer after Duke Ellington, which is particularly remarkable as Ellington composed more than a thousand pieces, whereas Monk wrote about 70.";
+			instructionsHTML.innerText="Thelonious Sphere Monk (October 10, 1917 – February 17, 1982) was an American jazz pianist and composer. Monk had a unique improvisational style and made numerous contributions to the standard jazz repertoire. Monk is the second most-recorded jazz composer after Duke Ellington, which is particularly remarkable as Ellington composed more than a thousand pieces, whereas Monk wrote about 70.";
 			monkAudio.play();
 		}else if(randomWord==='dizzy'){
 			winHTML.src = "assets/images/dizzymain.jpg";

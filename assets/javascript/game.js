@@ -127,13 +127,13 @@ document.onkeyup=function(event){
 			winHTML.src = "assets/images/milesmain.jpg";
 			winHTML.style.display = "block";
 			winTextHTML.innerText='Miles Davis';
-			instructionsHTML.innerText='Miles Dewey Davis III was an American jazz trumpeter, bandleader, and composer. He is among the most influential and acclaimed figures in the history of jazz and 20th century music.';
+			instructionsHTML.innerText='Miles Dewey Davis III (May 26, 1926 – September 28, 1991) was an American jazz trumpeter, bandleader, and composer. He is among the most influential and acclaimed figures in the history of jazz and 20th century music.';
 			milesAudio.play();
 		} else if(randomWord ==='trane'){
 			winHTML.src = "assets/images/coltranemain.jpg";
 			winHTML.style.display = "block";
 			winTextHTML.innerText='John ("Trane") Coltrane';
-			instructionsHTML.innerText='John William Coltrane, also known as "Trane", was an American jazz saxophonist and composer. Working in the bebop and hard bop idioms early in his career, Coltrane helped pioneer the use of modes in jazz and was later at the forefront of free jazz.';
+			instructionsHTML.innerText='John William Coltrane (September 23, 1926 – July 17, 1967), also known as "Trane", was an American jazz saxophonist and composer. Working in the bebop and hard bop idioms early in his career, Coltrane helped pioneer the use of modes in jazz and was later at the forefront of free jazz.';
 			traneAudio.play();
 		}else if(randomWord ==='bird'){
 			winHTML.src = "assets/images/birdmain.jpg";
@@ -145,7 +145,7 @@ document.onkeyup=function(event){
 			winHTML.src = "assets/images/dukemain.jpg";
 			winHTML.style.display = "block";
 			winTextHTML.innerText= 'Duke Ellington';
-			instructionsHTML.innerText='Edward Kennedy "Duke" Ellington was an American composer, pianist, and bandleader of a jazz orchestra, which he led from 1923 until his death in a career spanning over fifty years.';
+			instructionsHTML.innerText='Edward Kennedy "Duke" Ellington (April 29, 1899 – May 24, 1974) was an American composer, pianist, and bandleader of a jazz orchestra, which he led from 1923 until his death in a career spanning over fifty years.';
 			dukeAudio.play();
 		}else if(randomWord ==='count'){
 			winHTML.src = "assets/images/countmain.jpg";

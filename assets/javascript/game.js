@@ -30,16 +30,20 @@
 //if blank array is not filled before guesses left reaches 0
 //players loses, reset game to next word in array
 
-//variables
+// (function() {
+// 	var test = 'test';
+// })();
+// console.log(test);
 
+//global variables
+var randomWord = '';
 
+//object
 var hangman = {
-
-
-guessesLeft: 13,
-guessedLetters: [],
-wins: 0,
-guessWord: [],
+	guessesLeft: 13,
+	guessedLetters: [],
+	wins: 0,
+	guessWord: [],
 
 //dom variables
 currentWordHtml: document.getElementById('currentWord'),
@@ -56,32 +60,37 @@ words:['miles', 'trane', 'bird', "duke", "count", "monk", "dizzy", "satchmo", "e
 
 //pick a random word from the array
 randomWordGetter: function (arr){
-	return arr[Math.floor(Math.random()*words.length)];
+	return arr[Math.floor(Math.random()*this.words.length)];
 },
 
-randomWord: randomWordGetter(words),
 
 // function to show array that is the length of the currently selected word, but with all blank spaces
-showguessWord: function (){
+
+reset: function (){
 	guessWord = [];
 	guessedLetters = [];
 	guessedLettersHtml.innerText=guessedLetters;
 	guessesLeft = 13;
 	guessesLeftHtml.innerText=guessesLeft;
+},
+showguessWord: function (){
+
 	// create a for loop that iterates through the currently selected word length
 	for(var i = 0; i < randomWord.length; i++){
 		// and pushes a blank space into a new array, one space for each letter
-		guessWord.push('-');
+		this.guessWord.push('-');
 	}
 	//update the dom to show variable with blank spaces
-	currentWordHtml.innerText=guessWord.join('');
+	this.currentWordHtml.innerText=this.guessWord.join('');
 },
-showguessWord();
+
 
 //listen for key event
-var getUserKey: document.onkeyup=function(event)
-document.onkeyup=function(event){
-	return event.key;
+getUserKey: document.onkeyup=function(event){
+		return this.event.key;
+},
+
+checkLetter: function(){
 	// loop through the letters in the currently selected word
 	for (var i = 0; i < randomWord.length; i++){
 	//if the user presses the key that is a letter in the currently selected word
@@ -114,6 +123,20 @@ document.onkeyup=function(event){
 		wins++;
 		//update dom
 		winsHTML.innerText=wins;
+
+		var arr = [
+		{
+			word: 'miles',
+			image: 'assets/images/milesmain.jpg',
+			name: 'Miles Davis',		}
+		];
+
+		for( ...) {
+			if (arr[i].word === randomWord) {
+
+			}
+		}
+
 		if(randomWord==='miles'){
 			winHTML.src = "assets/images/milesmain.jpg";
 			winHTML.style.display = "block";
@@ -145,23 +168,33 @@ document.onkeyup=function(event){
 			winHTML.style.display = "block";
 			winTextHTML.innerText='Dizzy Gillespie';
 		}else if(randomWord==='satchmo'){
-			winHTML.src = "assets/images/satchmomain.jpg";
-			winHTML.style.display = "block";
-			winTextHTML.innerText='Louis "Satchmo" Armstrong';
+			writeOut("assets/images/satchmomain.jpg", 'Louis "Satchmo" Armstrong');
 		}else if(randomWord==='ella'){
 			winHTML.src = "assets/images/ellamain.jpg";
 			winHTML.style.display = "block";
 			winTextHTML.innerText='Ella Fitzgerald';
 		}
-		//generate new random word 
-		randomWord = randomWordGetter(words);
-		//show random word as blank spaces
-		showguessWord();
+
+		function writeOut(image,name){
+			winHTML.src = image;
+			winHTML.style.display = "block";
+			winTextHTML.innerText=name;
+		}
+		// //generate new random word 
+		// randomWord = randomWordGetter(words);
+		// //show random word as blank spaces
+		// showguessWord();
 	} 
 	//reset score and pick new random word
 	if (guessesLeft === 0){
 		randomWord = randomWordGetter(words);
 		showguessWord();
 	}
-};
 }
+};
+
+
+
+//calls
+randomWord=hangman.randomWordGetter(hangman.words);
+hangman.showguessWord();

@@ -4,10 +4,10 @@ A simple hangman game built in vanilla Javascript that pays homage to my favorit
 
 ## Examples
 
-** Guessing a musician **
+**Guessing a musician**
 
 ![Guessing](assets/images/example1.jpg)
 
-** Guess is revealed **
+**Guess is revealed**
 
 ![Reveal](assets/images/example2.jpg)

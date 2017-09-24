@@ -10,4 +10,4 @@ A simple hangman game built in vanilla Javascript that pays homage to my favorit
 
 **Guess is revealed**
 
-![Reveal](assets/images/example2.jpg)
+![Revealing](assets/images/example2.jpg)
